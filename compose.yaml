@@ -1,0 +1,9 @@
+services:
+  airconnect:
+    build: .
+    image: airconnect
+    volumes:
+      - /path/to/airconnect/config:/app/config
+    network_mode: "host"
+    restart: always
+    
