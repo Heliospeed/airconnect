@@ -1,9 +1,9 @@
 # syntax=docker/dockerfile:1
 
-FROM debian:bookworm-slim as base
+FROM debian:bookworm-slim AS base
 RUN apt update
 
-FROM base as build
+FROM base AS build
 
 RUN mkdir /app
 
@@ -18,7 +18,7 @@ RUN curl -s https://api.github.com/repos/philippe44/AirConnect/releases/latest |
 && chmod +x /tmp/aircast-linux-x86_64 \
 && chmod +x /tmp/airupnp-linux-x86_64
 
-FROM base as final
+FROM base AS final
 
 ADD . /app/
 
